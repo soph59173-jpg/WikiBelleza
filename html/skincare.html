@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Skincare — Wiki</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo-placeholder.png" alt="logo"/>
+        <div>
+          <div class="title">Wiki Belleza</div>
+          <div class="subtitle" style="font-size:12px;color:var(--muted)">Guía colaborativa</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="labiales.html">Labiales</a>
+        <a href="sombras.html">Sombras</a>
+        <a href="blushes.html">Blushes</a>
+        <a href="skincare.html">Skincare</a>
+      </nav>
+
+      <div class="search">
+        <input id="searchInput" placeholder="Buscar..." aria-label="Buscar"/>
+        <button id="searchBtn">Buscar</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container main" style="grid-template-columns:1fr; margin-top:92px">
+    <section>
+      <div class="card">
+        <h1>Skincare</h1>
+        <p class="muted">Página de categoría: Skincare</p>
+
+        <h2 id="concepto">Concepto</h2>
+        <p>El skincare se refiere al cuidado de la piel mediante rutinas y productos diseñados para mantenerla saludable, limpia e hidratada.</p>
+
+        <h2 id="tipos-piel">Tipos de piel</h2>
+        <ul>
+          <li><strong>Piel normal:</strong> Equilibrada, no presenta exceso de grasa ni sequedad.</li>
+          <li><strong>Piel seca:</strong> Necesita hidratación extra y productos nutritivos.</li>
+          <li><strong>Piel grasa:</strong> Propensa a brillos y acné; requiere productos ligeros y matificantes.</li>
+          <li><strong>Piel mixta:</strong> Combinación de zonas grasas y secas, requiere cuidado equilibrado.</li>
+        </ul>
+
+        <h2 id="rutinas">Rutinas recomendadas</h2>
+        <ul>
+          <li><strong>Limpieza:</strong> Usar limpiadores suaves dos veces al día.</li>
+          <li><strong>Tonificación:</strong> Restablecer el pH de la piel.</li>
+          <li><strong>Hidratación:</strong> Crema o gel según tipo de piel.</li>
+          <li><strong>Protección solar:</strong> Aplicar SPF diariamente.</li>
+        </ul>
+
+        <h2 id="ingredientes-clave">Ingredientes clave</h2>
+        <p>Algunos activos comunes son ácido hialurónico, vitamina C, retinol, niacinamida y antioxidantes para proteger y mejorar la piel.</p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <strong>Wiki Belleza</strong>
+        <div class="legal">© 2025</div>
+      </div>
+      <div>
+        <nav>
+          <a href="#">Términos</a> · <a href="#">Privacidad</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE BUSQUEDA -->
+  <script>
+    document.getElementById('searchBtn').addEventListener('click', function(){
+      var q = document.getElementById('searchInput').value.toLowerCase();
+      var articles = document.querySelectorAll('.card h1, .card h2, .card p, .card li');
+      articles.forEach(function(el){
+        if(q && el.innerText.toLowerCase().indexOf(q) === -1){
+          el.style.display = 'none';
+        } else {
+          el.style.display = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
